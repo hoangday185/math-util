@@ -1,3 +1,4 @@
+[![Practice CI with GitHub Actions using Ant and JUnit](https://github.com/chickencoder999/math-util/actions/workflows/math-util-ci.yml/badge.svg)](https://github.com/chickencoder999/math-util/actions/workflows/math-util-ci.yml)
 # Welcome to Math-Util Repository
 
 ## My mentor [Nguyen The Hoang](https://www.facebook.com/giao.lang.bis)
