@@ -39,6 +39,32 @@ public class FactorialTest {
         //hàm này sẽ văng ra ngoại lệ là đúng
         MathUtil.getFactorial(-5);//phải ném ngoại lệ mới là đúng
     }
+
+    @Test
+    public void checkFactorialGivenRightArgumentThrowsException_LambdaVersion() {
+        //hàm này nhận vào 2 tham số
+        //1 : loại ngoại lệ muốn so sánh
+        //2 : đoạn code chạy văng ra ngoài runnable
+//        Assert.assertThrows(expectedThrowable, runnable);
+
+        Assert.assertThrows(IllegalArgumentException.class, () -> {
+            MathUtil.getFactorial(-5);//đoạn code này được nhúng vào 1 interface khác để sử dụng
+        });
+    }
+
+    //chơi với try catch
+    @Test
+    public void checkFactorialGivenRightArgumentThrowsException_TryCatch() {
+        //ngoại lệ văng ra thì bắt bằng try catch
+        try {
+            MathUtil.getFactorial(-5);
+        } catch (Exception e) {
+            //kiểm tra này, bắt try catch thì junit sẽ ra màu xanh do đã chủ động bắt ngoại lệ
+            //nhưng ko chắc ngoại lệ mình cần có xuất hiện hay không
+            //có đoạn code kiểm soát ngoại lệ IllegalArgumentException
+            Assert.assertEquals("n must be between 0..20", e.getMessage());
+        }
+    }
 }
 
 //chốt hạ xanh đỏ
